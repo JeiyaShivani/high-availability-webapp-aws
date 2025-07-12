@@ -1,0 +1,14 @@
+#why do we need /16 CIDR for vpc?
+because it gives around 65536 ips which is useful for large projects
+CIDR block = a range of IPs like 10.0.0.0/16
+
+/16 ➝ means 16 fixed bits, rest can vary
+
+2^(32 - 16) = 2^16 = 65,536 IP addresses
+
+#what about subnets then?
+we need subnets to separate resources based on purpose or access level.
+From your main VPC CIDR block 10.0.0.0/16, you're carving out smaller subnet blocks like:
+10.0.1.0/24 → 256 IPs
+10.0.2.0/24 → 256 IPs
+These are subnets — smaller slices from your big VPC network
